@@ -1,83 +1,107 @@
 #include <stdio.h>
-#include <math.h> 
-#include <stdlib.h> 
+#include <math.h>
 
-int main() 
+int main()
 {
-    float a, b, Result;
     int choice;
+    double a, b, result;
 
-    printf("Enter two numbers (for Factorial, only the first number is used): ");
-    scanf("%f %f", &a, &b);
-
-    printf("\nChoose operation:\n");
-    printf("1. Addition\n");
-    printf("2. Subtraction\n");
-    printf("3. Multiplication\n");
-    printf("4. Division\n");
-    printf("5. Power (a raised to b)\n");
-    printf("6. Factorial (of a)\n");
-    printf("7. Exit\n");
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
-
-    switch (choice)
+    while (1)
     {
-    case 1:
-        Result = a + b;
-        printf("Result = %.2f\n", Result);
-        break;
+        // 1. Clearer Menu Display
+        printf("\n--------------------------------\n");
+        printf("       SCIENTIFIC CALCULATOR      \n");
+        printf("--------------------------------\n");
+        printf("1. Addition (+)\n");
+        printf("2. Subtraction (-)\n");
+        printf("3. Multiplication (*)\n");
+        printf("4. Division (/)\n");
+        printf("5. Power (a^b)\n");
+        printf("6. Factorial (a!)\n");
+        printf("7. Exit\n");
+        printf("--------------------------------\n");
+        printf("Enter your choice: ");
 
-    case 2:
-        Result = a - b;
-        printf("Result = %.2f\n", Result);
-        break;
-
-    case 3:
-        Result = a * b;
-        printf("Result = %.2f\n", Result);
-        break;
-
-    case 4:
-        if (b != 0)
+        // Input validation: Ensure user enters a number
+        if (scanf("%d", &choice) != 1)
         {
-            Result = a / b;
-            printf("Result = %.2f\n", Result);
+            // Clear the input buffer if non-integer is entered
+            while (getchar() != '\n')
+                ;
+            choice = 0; // Force default case
         }
-        else
-        {
-            printf("Error: Division by zero is not allowed.\n");
-        }
-        break;
 
-    case 5:
-       
-        Result = pow(a, b);
-        printf("Result = %.2f\n", Result);
-        break;
-
-    case 6:
-        
-        if (a < 0 || (int)a != a)
+        // 2. Handle Exit immediately
+        if (choice == 7)
         {
-            printf("Error: Factorial is not defined for negative numbers or non-integers.\n");
+            printf("Exiting program. Goodbye!\n");
+            break;
         }
-        else
+
+        // 3. Context-Aware Input: Ask for numbers based on the operation
+        if (choice >= 1 && choice <= 5)
         {
-            unsigned long long fact = 1; 
-            for (int i = 1; i <= (int)a; i++)
+            printf("Enter two numbers (a b): ");
+            scanf("%lf %lf", &a, &b);
+        }
+        else if (choice == 6)
+        {
+            printf("Enter a number: ");
+            scanf("%lf", &a);
+        }
+
+        // 4. Operation Logic
+        switch (choice)
+        {
+        case 1:
+            printf("Result: %.2lf + %.2lf = %.2lf\n", a, b, a + b);
+            break;
+
+        case 2:
+            printf("Result: %.2lf - %.2lf = %.2lf\n", a, b, a - b);
+            break;
+
+        case 3:
+            printf("Result: %.2lf * %.2lf = %.2lf\n", a, b, a * b);
+            break;
+
+        case 4:
+            if (b != 0)
+                printf("Result: %.2lf / %.2lf = %.2lf\n", a, b, a / b);
+            else
+                printf("Error: Division by zero is undefined.\n");
+            break;
+
+        case 5:
+            result = pow(a, b);
+            printf("Result: %.2lf ^ %.2lf = %.2lf\n", a, b, result);
+            break;
+
+        case 6:
+            // Check for negative, non-integer, or overflow risk (20! is limit for 64-bit)
+            if (a < 0 || (int)a != a)
             {
-                fact *= i;
+                printf("Error: Factorial requires a non-negative integer.\n");
             }
-            printf("Factorial of %d = %llu\n", (int)a, fact);
-        }
-        break;
-        
+            else if (a > 20)
+            {
+                printf("Error: Result too large for this calculator (Max input: 20).\n");
+            }
+            else
+            {
+                unsigned long long fact = 1;
+                for (int i = 1; i <= (int)a; i++)
+                {
+                    fact *= i;
+                }
+                printf("Result: %d! = %llu\n", (int)a, fact);
+            }
+            break;
 
-    default:
-        printf("Invalid choice!\n");
+        default:
+            printf("Invalid choice! Please try again.\n");
+        }
     }
+
     return 0;
 }
-
-
