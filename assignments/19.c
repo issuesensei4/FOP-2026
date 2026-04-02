@@ -1,12 +1,20 @@
 #include <stdio.h>
 
-// 1. One single, flat structure for the Employee
+/*
+ * Assignment 19: Employee Management System
+ * This program manages employee records using structures and provides:
+ * a) Total employee count
+ * b) Gender-based employee statistics
+ * c) List of high-earning employees (salary > $10,000)
+ * Demonstrates structure usage, array of structures, and function decomposition.
+ */
+
 struct EMPLOYEE
 {
     char name[50];
     char designation[50];
-    char gender; // 'M' or 'F'
-    int joinDay; // Date of joining broken down simply
+    char gender;
+    int joinDay;
     int joinMonth;
     int joinYear;
     double salary;
@@ -49,23 +57,24 @@ void displayHighEarners(struct EMPLOYEE list[], int count)
     {
         if (list[i].salary > 10000.0)
         {
-            printf("%s (%s) - Salary: $%.2f\n", list[i].name, list[i].designation, list[i].salary);
+            printf("%s (%s) - Salary: $%.2f\n",
+                   list[i].name,
+                   list[i].designation,
+                   list[i].salary);
         }
     }
 }
 
 int main()
 {
-    // 2. Create an array of 4 employees and fill in their data immediately
     struct EMPLOYEE myCompany[4] = {
         {"Alice Smith", "Manager", 'F', 15, 3, 2020, 12500.50},
         {"Bob Jones", "Analyst", 'M', 10, 6, 2021, 8500.00},
         {"Charlie Brown", "Developer", 'M', 1, 11, 2019, 11000.00},
         {"Diana Prince", "Director", 'F', 5, 1, 2018, 25000.00}};
 
-    int totalCount = 4; // We know we made 4 employees
+    int totalCount = 4;
 
-    // 3. Pass the array and the count to our simple functions
     printTotalEmployees(totalCount);
 
     printf("\n--- Gender Breakdown ---\n");

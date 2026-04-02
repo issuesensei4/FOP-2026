@@ -3,10 +3,8 @@
 #include <string.h>
 #include <math.h>
 
-void main() {
-
-    // Assignment 09
-    // Program to check if a number is a armstrong number or not (n = 3)
+void main()
+{
 
     int num, temp, sum;
 
@@ -15,15 +13,20 @@ void main() {
 
     temp = num;
     sum = 0;
-    while (temp > 0) {
+
+    while (temp > 0)
+    {
         int digit = temp % 10;
         sum += digit * digit * digit;
         temp /= 10;
     }
-    if (sum == num) {
+
+    if (sum == num)
+    {
         printf("%d is an Armstrong number.\n", num);
-    } else {
+    }
+    else
+    {
         printf("%d is not an Armstrong number.\n", num);
     }
-    }
-
+}
