@@ -2,10 +2,6 @@
 
 /*
  * Assignment 16: Even and Odd Number Separator
- * This program takes multiple numbers as input and separates them into:
- * - Even numbers (divisible by 2)
- * - Odd numbers (not divisible by 2)
- * Demonstrates array usage, conditional logic, and multiple array management.
  */
 
 int main()

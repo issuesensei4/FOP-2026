@@ -3,13 +3,7 @@
 
 /*
  * Assignment 11: Mathematical Operations Calculator
- * This program performs various mathematical operations on a given number:
- * - Square root calculation
- * - Square and cube operations
- * - Prime number checking
- * - Factorial calculation
- * - Prime factorization
- * Demonstrates use of math library functions and custom algorithms.
+ * This program performs various mathematical operations on a given number
  */
 
 int factorial(int n)

@@ -4,8 +4,6 @@
 
 /*
  * Assignment 22: String Operations Menu Program
- * This program provides a menu-driven interface to perform various string operations
- * using built-in C functions. All operations are beginner-friendly with clear explanations.
  */
 
 int main()

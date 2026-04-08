@@ -4,13 +4,6 @@
 
 /*
  * Assignment 18: String Operations Program
- * This program performs various string operations on two user-input strings:
- * 1. Calculate string length
- * 2. Reverse a string
- * 3. Check string equality
- * 4. Check if string is a palindrome
- * 5. Check substring presence
- * Demonstrates string manipulation functions from the C standard library.
  */
 
 int main(void)

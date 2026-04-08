@@ -4,8 +4,6 @@
 
 /*
  * Assignment 15: Random Number Generator
- * This program generates a random integer between specified minimum and maximum values.
- * It uses the current time as a seed to ensure different results on each run.
  */
 
 int main(void)

@@ -4,8 +4,6 @@
 
 /*
  * Assignment 10: Advanced Calculator
- * This program provides a menu-driven calculator with basic arithmetic operations
- * plus advanced functions like power and factorial calculations.
  */
 
 int factorial(int n)

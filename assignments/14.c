@@ -2,8 +2,6 @@
 
 /*
  * Assignment 14: Binary to Decimal Converter
- * This program converts a binary number (base 2) to its decimal equivalent (base 10).
- * It processes each digit from right to left, multiplying by increasing powers of 2.
  */
 
 int main()
@@ -26,7 +24,4 @@ int main()
     printf("Decimal = %d\n", decimal);
 
     return 0;
-}
-
-return 0;
 }

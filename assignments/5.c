@@ -2,11 +2,6 @@
 
 /*
  * Assignment 5: Matrix Operations
- * This program performs various operations on matrices including:
- * 1. Matrix addition
- * 2. Saddle point detection
- * 3. 2x2 matrix inversion
- * 4. Magic square verification
  */
 
 void add(int A[10][10], int B[10][10], int r, int c)

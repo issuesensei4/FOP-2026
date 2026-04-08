@@ -2,9 +2,6 @@
 
 /*
  * Assignment 6: Factorial Calculation
- * This program demonstrates two approaches to calculate factorial:
- * 1. Iterative method using a loop
- * 2. Recursive method using function calls
  */
 
 unsigned long long factorial_iterative(int n)
